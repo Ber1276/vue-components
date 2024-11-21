@@ -1,0 +1,43 @@
+:root {
+  --vk-color-primary: #1890ff;
+  --vk-color-primary-light-1: #e6f7ff;
+  --vk-color-primary-light-2: #bae7ff;
+  --vk-color-primary-light-3: #91d5ff;
+  --vk-color-primary-dark-1: #40a9ff;
+  --vk-color-primary-dark-2: #69c0ff;
+  --vk-color-primary-dark-3: #91d5ff;
+  /* Status colors */
+  --vk-color-success: #52c41a;
+  --vk-color-warning: #faad14;
+  --vk-color-danger: #f5222d;
+  --vk-color-info: #abd7ff;
+
+  /* Border properties */
+  --vk-border-width: 1px;
+  --vk-border-radius: 4px;
+
+  /* Background and fill colors */
+  --vk-bg-color: #ffffff;
+  --vk-fill-color: #f0f0f0;
+
+  /* Font colors */
+  --vk-font-color: #333333;
+  --vk-font-color-light: #ffffff;
+  --vk-font-color-dark: #000000;
+  --vk-font-color-muted: #999999;
+
+  /* Font sizes */
+  --vk-font-size-small: 12px;
+  --vk-font-size-normal: 16px;
+  --vk-font-size-large: 18px;
+
+  /* Font families */
+  --vk-font-family-sans-serif: "Helvetica Neue", Arial, sans-serif;
+  --vk-font-family-serif: "Georgia", serif;
+  --vk-font-family-monospace: "Courier New", monospace;
+
+  /* Font weights */
+  --vk-font-weight-normal: 400;
+  --vk-font-weight-bold: 700;
+  --vk-font-weight-bolder: 900;
+}
