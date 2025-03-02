@@ -5,17 +5,23 @@
     'is-plain': plain,
     'is-round': round,
     'is-circle': circle,
-  }" :disabled="disabled" :type="nativeType" :autofocus="autofocus">
-    <slot></slot>
+  }" :disabled="disabled || loading" :type="nativeType" :autofocus="autofocus">
+    <Icon icon="spinner" spin v-if="loading"></Icon>
+    <Icon :icon="icon" v-if="icon"></Icon>
+    <span>
+      <slot></slot>
+    </span>
   </button>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { ButtonProps } from "./types";
+import Icon from '../Icon/Icon.vue'
+import type { ButtonProps } from "./types"
 defineOptions({
-  name: "vkButton",
+  name: "VkButton",
 })
+
 withDefaults(defineProps<ButtonProps>(), {
   type: "primary",
   size: "medium",
@@ -35,51 +41,5 @@ defineExpose({
 </script>
 
 <style lang="scss" scoped>
-.vk-button {
-  border: var(--vk-border-width);
-  font-size: var(--vk-font-size-normal);
-  font-family: var(--vk-font-family-serif);
-  text-align: center;
-  color: var(--vk-font-color-light);
-}
-
-.vk-button {
-  &--primary {
-    background-color: var(--vk-color-primary);
-  }
-
-  &--success {
-    background-color: var(--vk-color-success);
-  }
-
-  &--warning {
-    background-color: var(--vk-color-warning);
-  }
-
-  &--danger {
-    background-color: var(--vk-color-danger);
-  }
-
-  &--info {
-    background-color: var(--vk-color-info);
-  }
-}
-
-.vk-button {
-  &--medium {
-    padding: 4px 10px;
-  }
-
-  &--small {
-    padding: 4px 6px;
-  }
-
-  &--large {
-    padding: 4px 18px;
-  }
-}
-
-.is-round {
-  border-radius: var(--vk-border-radius);
-}
+@import './style.css'
 </style>

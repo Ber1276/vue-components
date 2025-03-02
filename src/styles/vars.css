@@ -1,43 +1,100 @@
 :root {
-  --vk-color-primary: #1890ff;
-  --vk-color-primary-light-1: #e6f7ff;
-  --vk-color-primary-light-2: #bae7ff;
-  --vk-color-primary-light-3: #91d5ff;
-  --vk-color-primary-dark-1: #40a9ff;
-  --vk-color-primary-dark-2: #69c0ff;
-  --vk-color-primary-dark-3: #91d5ff;
-  /* Status colors */
-  --vk-color-success: #52c41a;
-  --vk-color-warning: #faad14;
-  --vk-color-danger: #f5222d;
-  --vk-color-info: #abd7ff;
+  /* colors */
+  --vk-color-white: #ffffff;
+  --vk-color-black: #000000;
 
-  /* Border properties */
-  --vk-border-width: 1px;
-  --vk-border-radius: 4px;
+  --vk-color-primary: #409eff;
+  --vk-color-success: #67c23a;
+  --vk-color-warning: #e6a23c;
+  --vk-color-danger: #f56c6c;
+  --vk-color-info: #909399;
 
-  /* Background and fill colors */
+  /* Primary */
+  --vk-color-primary-light-3: color-mix(in srgb, white 30%, #409eff);
+  --vk-color-primary-light-5: color-mix(in srgb, white 50%, #409eff);
+  --vk-color-primary-light-7: color-mix(in srgb, white 70%, #409eff);
+  --vk-color-primary-light-8: color-mix(in srgb, white 80%, #409eff);
+  --vk-color-primary-dark-2: color-mix(in srgb, black 20%, #409eff);
+
+  /* Success */
+  --vk-color-success-light-3: color-mix(in srgb, white 30%, #67c23a);
+  --vk-color-success-light-5: color-mix(in srgb, white 50%, #67c23a);
+  --vk-color-success-light-7: color-mix(in srgb, white 70%, #67c23a);
+  --vk-color-success-light-8: color-mix(in srgb, white 80%, #67c23a);
+  --vk-color-success-dark-2: color-mix(in srgb, black 20%, #67c23a);
+
+  /* Warning */
+  --vk-color-warning-light-3: color-mix(in srgb, white 30%, #e6a23c);
+  --vk-color-warning-light-5: color-mix(in srgb, white 50%, #e6a23c);
+  --vk-color-warning-light-7: color-mix(in srgb, white 70%, #e6a23c);
+  --vk-color-warning-light-8: color-mix(in srgb, white 80%, #e6a23c);
+  --vk-color-warning-dark-2: color-mix(in srgb, black 20%, #e6a23c);
+
+  /* Danger */
+  --vk-color-danger-light-3: color-mix(in srgb, white 30%, #f56c6c);
+  --vk-color-danger-light-5: color-mix(in srgb, white 50%, #f56c6c);
+  --vk-color-danger-light-7: color-mix(in srgb, white 70%, #f56c6c);
+  --vk-color-danger-light-8: color-mix(in srgb, white 80%, #f56c6c);
+  --vk-color-danger-dark-2: color-mix(in srgb, black 20%, #f56c6c);
+
+  /* Info */
+  --vk-color-info-light-3: color-mix(in srgb, white 30%, #909399);
+  --vk-color-info-light-5: color-mix(in srgb, white 50%, #909399);
+  --vk-color-info-light-7: color-mix(in srgb, white 70%, #909399);
+  --vk-color-info-light-8: color-mix(in srgb, white 80%, #909399);
+  --vk-color-info-dark-2: color-mix(in srgb, black 20%, #909399);
+
   --vk-bg-color: #ffffff;
-  --vk-fill-color: #f0f0f0;
+  --vk-bg-color-page: #f2f3f5;
+  --vk-bg-color-overlay: #ffffff;
+  --vk-text-color-primary: #303133;
+  --vk-text-color-regular: #606266;
+  --vk-text-color-secondary: #909399;
+  --vk-text-color-placeholder: #a8abb2;
+  --vk-text-color-disabled: #c0c4cc;
+  --vk-border-color: #dcdfe6;
+  --vk-border-color-light: #e4e7ed;
+  --vk-border-color-lighter: #ebeef5;
+  --vk-border-color-extra-light: #f2f6fc;
+  --vk-border-color-dark: #d4d7de;
+  --vk-border-color-darker: #cdd0d6;
+  --vk-fill-color: #f0f2f5;
+  --vk-fill-color-light: #f5f7fa;
+  --vk-fill-color-lighter: #fafafa;
+  --vk-fill-color-extra-light: #fafcff;
+  --vk-fill-color-dark: #ebedf0;
+  --vk-fill-color-darker: #e6e8eb;
+  --vk-fill-color-blank: #ffffff;
 
-  /* Font colors */
-  --vk-font-color: #333333;
-  --vk-font-color-light: #ffffff;
-  --vk-font-color-dark: #000000;
-  --vk-font-color-muted: #999999;
+  /* border */
+  --vk-border-width: 1px;
+  --vk-border-style: solid;
+  --vk-border-color-hover: var(--vk-text-color-disabled);
+  --vk-border: var(--vk-border-width) var(--vk-border-style)
+    var(--vk-border-color);
+  --vk-border-radius-base: 4px;
+  --vk-border-radius-small: 2px;
+  --vk-border-radius-round: 20px;
+  --vk-border-radius-circle: 100%;
 
-  /* Font sizes */
-  --vk-font-size-small: 12px;
-  --vk-font-size-normal: 16px;
+  /*font*/
+  --vk-font-size-extra-large: 20px;
   --vk-font-size-large: 18px;
+  --vk-font-size-medium: 16px;
+  --vk-font-size-base: 14px;
+  --vk-font-size-small: 13px;
+  --vk-font-size-extra-small: 12px;
+  --vk-font-family: "Helvetica Neue", Helvetica, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", Arial,
+    sans-serif;
+  --vk-font-weight-primary: 500;
 
-  /* Font families */
-  --vk-font-family-sans-serif: "Helvetica Neue", Arial, sans-serif;
-  --vk-font-family-serif: "Georgia", serif;
-  --vk-font-family-monospace: "Courier New", monospace;
+  /*disabled*/
+  --vk-disabled-bg-color: var(--vk-fill-color-light);
+  --vk-disabled-text-color: var(--vk-text-color-placeholder);
+  --vk-disabled-border-color: var(--vk-border-color-light);
 
-  /* Font weights */
-  --vk-font-weight-normal: 400;
-  --vk-font-weight-bold: 700;
-  --vk-font-weight-bolder: 900;
+  /*animation*/
+  --vk-transition-duration: 0.3s;
+  --vk-transition-duration-fast: 0.2s;
 }
