@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, h } from 'vue'
 import Button from "./components/Button/vkButton.vue"
 import VkCollapse from './components/Collapse/vkCollapse.vue'
 import VkCollapseItem from './components/Collapse/vkCollapseItem.vue'
@@ -8,13 +8,27 @@ import Alert from './components/Alert/index.vue'
 import type { ButtonInstance } from "./components/Button/types"
 import type { NameType } from './components/Collapse/types'
 import Tooltip from './components/Tooltip/Tooltip.vue'
+import type { TooltipInstance } from './components/Tooltip/types'
+import Dropdown from './components/Dropdown/Dropdown'
+import type { MenuOption } from './components/Dropdown/types'
 
+const tooltipRef = ref<TooltipInstance | null>(null)
 const buttonRef = ref<ButtonInstance | null>(null)
 const openValue = ref<NameType[]>(['a'])
 const handleAlertClose = () => {
   console.log('alert closed!')
 }
+const options: MenuOption[] = [
+  { key: 1, label: h('b', 'this is bold') },
+  { key: 2, label: 'item2', disabled: true },
+  { key: 3, label: 'item3', divided: true },
+  { key: 4, label: 'item4' }
+]
+const inlineConsole = (...args: any) => {
+  console.log(...args)
+}
 
+const trigger = ref<any>('click')
 
 </script>
 
@@ -54,14 +68,26 @@ const handleAlertClose = () => {
 
   <div>
 
-    <Tooltip content="hello word" placement="right">
+    <Tooltip placement="right" ref="tooltipRef">
       <img src="./assets/logo.svg" alt="vue logo" class="logo" width="40" height="40">
       <template #content>
         <div>hello world</div>
       </template>
     </Tooltip>
+    <Button @click="() => {
+      tooltipRef?.show()
+    }">open</Button>
+    <Button @click="() => {
+      tooltipRef?.hide()
+    }">close</Button>
 
+  </div>
 
+  <div>
+    <Dropdown placement="bottom" :trigger="trigger" :menu-options="options"
+      @visible-change="e => inlineConsole('visible change', e)" @select="e => inlineConsole('select', e)">
+      <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    </Dropdown>
   </div>
 </template>
 
